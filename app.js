@@ -25,7 +25,10 @@ mongoose.connect('mongodb+srv://rokiatraore:rokiatraore@cluster0.j6t0u.mongodb.n
 //Transformer le corps de la requête en objet JS
 app.use(express.json());
 
+/*Gérer la ressource images de manière statique à chaque fois qu'elle reçoit une 
+requête vers la route /images*/
 app.use('/images', express.static(path.join(__dirname, 'images')));
+
 //Enregistrer les routeurs pour les demandes effectuées vers leurs routes
 app.use('/api/sauces', saucesRoutes);
 app.use('/api/auth', usersRoutes);
